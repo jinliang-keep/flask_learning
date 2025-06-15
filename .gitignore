@@ -1,0 +1,20 @@
+# Python 缓存
+**/__pycache__/
+**/*.py[cod]
+
+# 虚拟环境（适配多个项目）
+**/venv/
+**/env/
+**/.env
+
+# Flask 项目常见临时目录
+**/instance/
+**/*.sqlite3
+
+# 编辑器配置
+.vscode/
+.idea/
+
+# 系统垃圾文件
+.DS_Store
+Thumbs.db

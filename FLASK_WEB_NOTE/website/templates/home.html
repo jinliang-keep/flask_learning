@@ -1,0 +1,31 @@
+<!-- 首页 -->
+{% extends "base.html" %} {% block title %}主页{% endblock %} {% block content%}
+
+<h1 align="center">笔记</h1>
+
+<!-- 创建笔记 -->
+<form method="POST">
+    <textarea name="note" id="note" class="form-control"></textarea>
+    <br />
+    <div align="center">
+        <button type="submit" class="btn btn-primary">
+            添加笔记
+        </button>
+    </div>
+</form>
+
+<button onclick="sayHello()">点击我</button>
+
+<!-- 显示所有笔记 -->
+<ul class="list-group list-group-flush" id="notes">
+    {% for note in user.notes %}
+    <li class="list-group-item">{{ note.data }} {{ note.date }}
+        <!-- 删除笔记 -->
+        <button type="button" class="btn-close" onClick="deleteNote('{{ note.id }}')">
+            <!-- <span aria-hidden="true">&times;</span> -->
+        </button>
+    </li>
+
+    {% endfor %}
+</ul>
+{% endblock %}
